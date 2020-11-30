@@ -17,17 +17,24 @@ class _AuthScreenState extends State<AuthScreen> {
     bool isLogin,
   ) async {
     UserCredential _userCredential;
+    try {
+      if (isLogin) {
+        _userCredential = await _auth.signInWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
+      } else {
+        _userCredential = await _auth.createUserWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
+      }
+    } on PlatformException catch (e) {
+      var message = 'An error occurred, please check your credentials!';
 
-    if (isLogin) {
-      _userCredential = await _auth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-    } else {
-      _userCredential = await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
+      if (e.message != null) {
+        message = e.message;
+      }
     }
   }
 
