@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -29,6 +30,13 @@ class _AuthScreenState extends State<AuthScreen> {
           email: email,
           password: password,
         );
+        await FirebaseFirestore.instance
+            .collection('user')
+            .doc(_userCredential.user.uid)
+            .set({
+          'username': username,
+          'email': email,
+        });
       }
     } on PlatformException catch (e) {
       var message = 'An error occurred, please check your credentials!';
