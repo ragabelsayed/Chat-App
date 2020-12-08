@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mychat/widgets/chat/message_bubble.dart';
 
@@ -21,7 +20,8 @@ class Messages extends StatelessWidget {
           reverse: true,
           itemCount: chatDocs.length,
           itemBuilder: (context, index) => MessageBubble(
-            chatDocs[index]['text'],
+            chatDocs[index].data()['text'],
+            chatDocs[index].data()['username'],
             chatDocs[index].data()['userId'] ==
                 FirebaseAuth.instance.currentUser.uid,
             key: ValueKey(chatDocs[index].documentID),
