@@ -76,7 +76,7 @@ class MessageBubble extends StatelessWidget {
           ),
         ),
       ],
-      overflow: Overflow.visible,
+      clipBehavior: Clip.hardEdge,
     );
   }
 }
