@@ -1,6 +1,6 @@
 # Chat-App
 My Chat app clone.
-- Used in it:
+# Used in it:
 - Firebase as backend.
 - Firebase packages like 
   (Authentication , 
