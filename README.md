@@ -1,5 +1,5 @@
 # Chat-App
-My Chat app clone.
+My Flutter Chat app clone.
 # Used in it:
 - Firebase as backend.
 - Firebase packages like 
