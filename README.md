@@ -3,7 +3,7 @@ My Flutter Chat app clone.
 # Used in it:
 - Firebase as backend.
 - Firebase packages like 
-        - Authentication 
+                - Authentication 
         . Cloud Firestore 
         . Realtime data,
         . Cloud Storage,
