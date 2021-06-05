@@ -7,6 +7,6 @@ My Flutter Chat app clone.
    . Cloud Firestore 
    . Realtime data,
    . Cloud Storage,
-   . Push notification).
+   . Push notification
 
 
